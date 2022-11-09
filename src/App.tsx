@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { appLinks } from "./routes";
 import { AppStoreProvider } from "./store";
 import Theme from "./Theme";
+import Loader from "./components/Loader";
 
 const Home = lazy(() => import("./containers/Home"));
 const JobDetails = lazy(() => import("./containers/JobDetails"));
@@ -13,7 +14,7 @@ function App() {
     <AppStoreProvider>
       <Theme>
         <BrowserRouter>
-          <Suspense fallback={<div>Loading</div>}>
+          <Suspense fallback={<Loader />}>
             <Routes>
               <Route path={appLinks.home.link} index element={<Home />} />
               <Route path={appLinks.jobDetails.link} element={<JobDetails />} />

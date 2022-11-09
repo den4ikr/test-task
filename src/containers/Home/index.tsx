@@ -2,13 +2,11 @@ import { Box, useMediaQuery } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getListOfJobs } from "../../api/homeApi";
+import ErrorPlaceholder from "../../components/ErrorPlaceholder";
 import JobCard from "../../components/JobCard";
 import JobCardMobile from "../../components/JobCardMobile";
 import Loader from "../../components/Loader";
-import {
-  getSelectedJobFromLocalStorage,
-  setSelectedJobToLocalStorage,
-} from "../../helpers/localStorag";
+import { setSelectedJobToLocalStorage } from "../../helpers/localStorag";
 import { appLinks } from "../../routes";
 import { useAppContext } from "../../store";
 import { SetSelectedJob } from "../../store/action";
@@ -19,6 +17,7 @@ const Home: React.FC = () => {
   const { dispatch } = useAppContext();
   const [jobsListData, setJobsListData] = useState<JobListData>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsErorr] = useState(false);
   const isMobile = useMediaQuery("(max-width:780px)");
 
   const handleRedirectOnDetailsPage = (job: JobListItem) => {
@@ -29,17 +28,24 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getListOfJobs().then((res) => {
-      setJobsListData(res);
-      setIsLoading(false);
-    });
+    getListOfJobs().then(
+      (res) => {
+        setJobsListData(res);
+        setIsLoading(false);
+      },
+      () => {
+        setIsErorr(true);
+      }
+    );
   }, []);
+
+  if (isError) {
+    return <ErrorPlaceholder />;
+  }
 
   if (isLoading) {
     return <Loader />;
   }
-
-  console.log(getSelectedJobFromLocalStorage());
 
   return (
     <Box sx={{ maxWidth: "1400px", margin: "0 auto", padding: 2 }}>
