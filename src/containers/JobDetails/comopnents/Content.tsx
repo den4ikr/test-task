@@ -13,7 +13,7 @@ const Content: React.FC<Props> = ({ data }: Props) => {
   const isMobile = useMediaQuery("(max-width:780px)");
 
   return (
-    <Box sx={{ marginTop: "50px", overflowX: "hidden" }}>
+    <Box sx={{ marginTop: "50px" }}>
       {!isMobile && <Button variant="contained">APPLY NOW</Button>}
       <Grid container justifyContent="space-between" sx={{ marginTop: "32px" }}>
         <Grid item sx={{ maxWidth: "501px" }}>
