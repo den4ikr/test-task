@@ -25,47 +25,6 @@ const JobCard: React.FC<Props> = ({
   const breakpoint = useMediaQuery("(max-width:1080px)");
 
   return (
-    // <div className="flex justify-center">
-    //   <div className="container mx-w-[1400px] h-[164px] bg-white-200 rounded-xl shadow border px-[16px] py-[24px] mb-3">
-    //     <div className="flex justify-between h-[100%] flex-wrap">
-    //       <div>
-    //         <div className="flex items-start space-x-4 ">
-    //           <div>
-    //             <img
-    //               className="w-[85px] h-[85px] rounded-full"
-    //               src={data.pictures[0]}
-    //               alt="avatar"
-    //             />
-    //           </div>
-    //           <div>
-    //             <p
-    //               className="text-3xl text-[#3A4562] text-xl font-bold mb-2 w-[720px] hover:cursor-pointer"
-    //               onClick={() => handleRedirectOnDetailsPage(data)}
-    //             >
-    //               {data.title}
-    //             </p>
-    //             <p className="text-500 text-md text-[#878D9D]">
-    //               {data.name} • {data.address}
-    //             </p>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div className="flex space-x-7 lg: mt-4 ">
-    //         <div className="flex items-center">
-    //           <img src={rating} alt="rating" />
-    //         </div>
-    //         <div className="flex flex-col justify-between items-end lg:flex-row lg:space-x-4 md:flex-nowrap md:flex-row md:space-x-4 ">
-    //           <div>
-    //             <img src={icon} alt="add-to-favorite-icon" />
-    //           </div>
-    //           <div className="text-[#878D9D] text-[14px]">
-    //             Posted {dateToTimeAgo(new Date(data.createdAt))}
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <Card sx={{ width: "100%", marginTop: "10px", minHeight: "164px" }}>
         <CardContent>

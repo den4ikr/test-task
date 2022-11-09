@@ -16,42 +16,6 @@ const JobCardMobile: React.FC<Props> = ({
   handleRedirectOnDetailsPage,
 }: Props) => {
   return (
-    // <div className="flex justify-center m-2">
-    //   <div className="container mx-w-[1400px] h-[206px] bg-[#EFF0F5] rounded-xl shadow border px-[16px] py-[24px] mb-3">
-    //     <div className="flex space-x-4 items-center">
-    //       <div className="w-[66px]">
-    //         <img
-    //           className="w-[66px] h-[66px] rounded-full object-cover"
-    //           src={data.pictures[0]}
-    //           alt="avatar"
-    //         />
-    //       </div>
-    //       <div className="grow">
-    //         <div className="flex justify-between items-center mb-2">
-    //           <div>
-    //             <img src={ratingMobile} alt="rating-mobile" />
-    //           </div>
-    //           <div className="text-[#878D9D] text-[14px]">
-    //             Posted {dateToTimeAgo(new Date(data.createdAt))}
-    //           </div>
-    //         </div>
-    //         <div>
-    //           <div>
-    //             <div
-    //               className="text-[#3A4562] text-[14px] font-bold mb-2 w-[720px] hover:cursor-pointer max-w-[300px] max-sm:w-[200px]"
-    //               onClick={() => handleRedirectOnDetailsPage(data)}
-    //             >
-    //               {data.title}
-    //             </div>
-    //             <p className="text-500 text-[16px] text-[#878D9D] max-sm:text-[14px]">
-    //               {data.name} • {data.address}
-    //             </p>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <Card
       sx={{ background: colors.mobileCardBg, mt: 2 }}
       onClick={() => handleRedirectOnDetailsPage(data)}
